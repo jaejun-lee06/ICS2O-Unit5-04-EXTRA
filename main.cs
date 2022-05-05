@@ -9,53 +9,18 @@ class Program
 {
     public static void Main(string[] args)
     {
-        float age;
-        int dayint;
-        string day;
+        int userAge;
+        var dayWeek = Console.ReadLine();
 
-        void askAge()
-        {
-            Console.Write("Enter age: ");
-            age = Convert.ToInt32(Console.ReadLine());
-        }
+        Console.WriteLine("Write your age:");
+        userAge = int.Parse(Console.ReadLine());
+        Console.WriteLine("Write day of the week it is (Capital first letter):");
+        dayWeek = Console.ReadLine();
 
-        void askDay()
-        {
-            Console.WriteLine("Enter day of the week: ");
-            Console.WriteLine("1 - Sunday");
-            Console.WriteLine("2 - Monday");
-            Console.WriteLine("3 - Tuesday");
-            Console.WriteLine("4 - Wednesday");
-            Console.WriteLine("5 - Thursday");
-            Console.WriteLine("6 - Friday");
-            Console.WriteLine("7 - Saturday");
-            dayint = Convert.ToInt32(Console.ReadLine());
-            if (dayint > 7 || dayint < 1)
-            {
-                Console.Clear();
-                Console.WriteLine("\nPlease enter a valid number.");
-                askDay();
-            }
-            else if (dayint == 3 || dayint == 5)
-            {
-                day = "Free Day";
-            }
-            else
-            {
-                day = "Unfree Day";
-            }
-        }
-
-        askAge();
-        askDay();
-        if (day == "Free Day" && day != "Unfree Day" || age > 12 && age < 22)
-        {
-            Console.WriteLine("\nYou can pay with the museum's student pricing.");
-        }
+        if ((dayWeek == "Tuesday" || dayWeek == "Thursday") && (userAge > 12 && userAge < 21))
+            Console.WriteLine("You have a student discount! Pay student pricing.");
         else
-        {
-            Console.WriteLine("\nYou must pay with the museum's regular pricing.");
-        }
-        Console.WriteLine("\nDone.");
+            Console.WriteLine("You do not have a student discount! Pay regular pricing.");
+
     }
 }
