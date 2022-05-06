@@ -9,18 +9,18 @@ class Program
 {
     public static void Main(string[] args)
     {
-        int userAge;
+        int age;
         var dayWeek = Console.ReadLine();
 
-        Console.WriteLine("Write your age:");
-        userAge = int.Parse(Console.ReadLine());
-        Console.WriteLine("Write day of the week it is (Capital first letter):");
+        Console.WriteLine("Enter your age:");
+        age = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter what day of the week it is:");
         dayWeek = Console.ReadLine();
 
-        if ((dayWeek == "Tuesday" || dayWeek == "Thursday") && (userAge > 12 && userAge < 21))
-            Console.WriteLine("You have a student discount! Pay student pricing.");
+        if ((dayWeek == "Tuesday" || dayWeek == "Thursday") || (age > 12 && age < 21))
+            Console.WriteLine("You're eligible for student pricing!");
         else
-            Console.WriteLine("You do not have a student discount! Pay regular pricing.");
+            Console.WriteLine("You must pay a regular price.");
 
     }
 }
